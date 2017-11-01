@@ -1,0 +1,19 @@
+<div class="navbar">
+  <!-- Users: -->
+  <li>  <%= link_to "Home", "/home" %>  </li>
+  <li>  <%= link_to "Login", "/login_form" %> </li>
+  <li>  <%= link_to "Signup", new_user_path %> </li>
+
+
+  <div>
+  <!-- Posts: -->
+    <% if @current_user %>
+      <li>  <%= link_to "SF Chefs", users_path %> </li>
+      <li>  <%= link_to "Recipes", all_posts_path %> </li>
+      <li>   <%= link_to "My Recipes", my_posts_path %></li>
+      <li>   <%= link_to "New Recipe", new_user_post_path(@current_user) %></li>
+      <li>  <%= link_to "Logout", "/logout" %> </li>
+
+  <% end %>
+  </div>
+</div>

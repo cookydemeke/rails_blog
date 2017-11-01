@@ -1,0 +1,25 @@
+<h1> Write a new post </h1>
+
+<%= form_with(model: @post, url: user_posts_path(@current_user[:id]), local: true) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions" id="writepost">
+Brewery:  <%= form.text_field :title, value: "", size: "60x5", placeholder: "Name and Location" %><br /><br />
+Post: <%= form.text_area :content, size: "70x5" %><br />
+      <%= form.hidden_field :user_id, value: @current_user[:id] %><br />
+      <%= form.submit %>
+  </div>
+<% end %>
+<div class="paths">
+  <%= link_to 'Back', user_posts_path(@current_user[:id])%>
+</div>

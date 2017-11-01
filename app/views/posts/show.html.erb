@@ -1,0 +1,12 @@
+
+<h1><%= @post[:title] %></h1>
+<div id="fullpost">
+  <%= @post[:content] %>
+</div><br>
+<% @comments.each do |comment| %>
+<p><%= comment[:content] %></p>
+<% end  %>
+<div class="paths">
+  <%= link_to 'Edit', edit_user_post_path(@current_user, @post) %> |
+  <%= link_to 'Back', user_posts_path %>
+</div>

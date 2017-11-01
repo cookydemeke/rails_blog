@@ -1,0 +1,6 @@
+<h1> Profile </h1>
+<div class="paths">
+  User: <%= @user[:username] %><br><br>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>

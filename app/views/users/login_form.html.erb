@@ -1,0 +1,8 @@
+<h1> Log In </h1>
+
+<!-- == login_form.html.erb code == -->
+  <%= form_with url: '/login', method: 'post', :class => "logform", local: true do |form| %>
+      User name: <%= form.text_field :username, value: "me" %><br>
+      Password: <%= form.text_field :password, value: "123" %><br>
+      <%= form.submit %>
+  <% end %>

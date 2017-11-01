@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Soul Food</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <!-- ======= ======= ======= body ======= ======= ======= -->
+    <body>
+
+        <!-- == header == -->
+        <div id="header">
+            <h1> Soul Food </h1>
+            <h2> Healthy Eating </h2>
+            <%= render :partial => '/users/menu' %>
+        </div>
+
+        <!-- == yield == -->
+        <div id="yield" class="section">
+            <%= yield %>
+        </div>
+
+        <!-- == footer == -->
+        <div id="footer" class="section">
+            <% if notice %>
+                <p id="notice"><%= notice %></p>
+
+            <% end %>
+        </div>
+    </body>
+</html>

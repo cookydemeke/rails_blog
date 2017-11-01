@@ -1,0 +1,9 @@
+<h1> My Posts </h1>
+
+<div id="mypoststable">
+  <%= @my_posts.each do |post| %>
+    <p> <%= post[:title] %> </p> By: <p> <%= @current_user[:username] %> </p>
+    <p> <%= post[:content] %> </p>
+    <%= link_to 'Add comments', '/new_comment/' + post[:id].to_s + '/' + @current_user[:id].to_s %>
+  <% end %>
+</div>
